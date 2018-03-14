@@ -1,0 +1,11 @@
+dokumentace gate.
+
+SERVER
+Postup
+1) při připojení server odešle login request.
+2) Při obdržení login request klient odešle login response obsahující jméno a heslo.
+3) Pokud je přihlášení správně, server odešle zprávu authenticated a uloží socket do authenticated sockets. Pokud jsou přihlašovací údaje nesprávné, odešle zprávu wrong_login a odpojí socket.
+4) Při obdržení žádosti o změnu, server ověři, zda je socket ověřen. pokud ano, zprávu přepošle do místnosti Gate. //TODO - uložit do Historie
+5) Při obdržení informace o stavu server ověří, zda je uživatel ověřen a ve skupině Gate. Pokud ano, server přepošle žádost do místností Administrator a User //TODO - uložit do Historie
+
+Při příkazu register zkontroluje, zda je členem skupiny administrator. Pokud ano, obdržená data uloží do SQL. //TODO - odeslat error zprávu, pokud se nepodaří registrace

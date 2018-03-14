@@ -1,0 +1,46 @@
+{
+    "description": "socket.io Client for ESP8266 and Arduino", 
+    "repository": {
+        "url": "https://github.com/timum-viw/socket.io-client", 
+        "type": "git"
+    }, 
+    "platforms": [
+        "atmelavr", 
+        "atmelsam", 
+        "espressif8266", 
+        "intel_arc32", 
+        "microchippic32", 
+        "nordicnrf51", 
+        "teensy", 
+        "timsp430"
+    ], 
+    "export": {
+        "exclude": [
+            "extras", 
+            "docs", 
+            "tests", 
+            "test", 
+            "*.doxyfile", 
+            "*.pdf"
+        ], 
+        "include": null
+    }, 
+    "authors": [
+        {
+            "maintainer": true, 
+            "name": "Vincent Wyszynski", 
+            "url": null, 
+            "email": null
+        }
+    ], 
+    "keywords": [
+        "communication"
+    ], 
+    "id": 1492, 
+    "name": "SocketIoClient", 
+    "frameworks": [
+        "arduino"
+    ], 
+    "version": "0.2", 
+    "homepage": null
+}

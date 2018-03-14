@@ -1,0 +1,16 @@
+{
+  "transport": "ftp",
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "92.62.239.3",
+  "port": "21",
+  "target": "/www/smarthome",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "Administrator",
+  "password": "Tomas1999",
+  "watch": []
+}

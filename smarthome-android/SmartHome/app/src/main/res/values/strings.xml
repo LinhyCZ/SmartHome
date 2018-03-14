@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SmartHome</string>
+    <string name="LoginButtonLabel">Přihlásit</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <item type="id" name="action"/>
+    <item type="id" name="functionID"/>
+    <item type="id" name="deviceID"/>
+    <item type="id" name="isOnline"/>
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Smarthome"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentLeft="true"
+            android:textSize="30sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Vytvořit"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible"
+            android:id="@+id/generateButton"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="10dp"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:onClick="saveWidgetConfiguration"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/widgetConfigureRootLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/loader_layout">
+            <com.wang.avi.AVLoadingIndicatorView
+                android:layout_centerInParent="true"
+                android:id="@+id/loading_spinner"
+                android:layout_width="200dp"
+                android:layout_height="202dp"
+                app:indicatorColor="@android:color/holo_blue_dark"
+                app:indicatorName="BallClipRotateIndicator"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/widgetConfigureFunctionsLayout">
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

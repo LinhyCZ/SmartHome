@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/functionParentLayout">
+
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/top_border">
+
+        <TextView
+            android:id="@+id/functionName"
+            android:gravity="center_vertical|end"
+            android:textSize="20dp"
+            app:layout_heightPercent="40%"
+            app:layout_widthPercent="49%" />
+
+        <LinearLayout
+            app:layout_widthPercent="49%"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="51%"
+            android:orientation="vertical">
+
+            <com.larswerkman.holocolorpicker.ColorPicker
+                android:id="@+id/picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.larswerkman.holocolorpicker.SVBar
+                android:id="@+id/svbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </android.support.percent.PercentRelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true">
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp">
+                <!--android:clickable="true"
+                android:onClick="onMenuClick"-->
+                <Button
+                    android:id="@+id/menuButton"
+                    android:clickable="true"
+                    android:onClick="onMenuClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_menu_white_24dp"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Smarthome"
+                android:gravity="center_vertical"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-300dp"
+            android:elevation="10dp"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <ExpandableListView
+                android:id="@+id/ExpandableView"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </ExpandableListView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/data"
+            android:elevation="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="closeMenu"/>
+    </RelativeLayout>
+</LinearLayout>

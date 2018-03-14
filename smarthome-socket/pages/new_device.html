@@ -1,0 +1,17 @@
+<link href="styles/pages/new_device.css" rel="stylesheet">
+<h1 class="new_device_header">Přidání nového zařízení</h1>
+<p>Pro přidání nového zařízení napište jeho sériové číslo do pole níže. Poté zařízení připojte do sítě a vyčkejte na autorizaci.</p>
+<form id="new_device_form">
+  <input type="text" id="new_device_name" name="new_device_name" placeholder="Přezdívka zařízení">
+  <div id="new_device_form_line_two">
+    <input type="number" id="new_device_id" name="new_device_id" placeholder="ID zařízení">
+    <input type="submit" id="new_device_submit" class="register" value="Přidat nové zařízení">
+  </div>
+</form>
+<div id="new_device_info">
+  <p class="info_text">Nyní, prosím, připojte zařízení, které chcete zaregistrovat do sítě, a počkejte, než se zařízení spojí s naším serverem.</p>
+  <p class="info_icon"><i class="login_button_icon fas fa-circle-o-notch fa-spin fa-fw"></i></p>
+  <h3>Čas zbývající pro připojení zařízení</h3>
+  <h1 id="new_device_time_remaining"></h1>
+</div>
+<!--<script src="js/pages/new_device.js"></script>-->

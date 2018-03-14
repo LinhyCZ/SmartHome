@@ -1,0 +1,64 @@
+.device {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 150px;
+  margin-right: 150px;
+  width: 290px;
+  height: 260px;
+}
+
+.device img {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 150px;
+  display: block;
+}
+
+.symbol {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.symbol i {
+  color: white;
+  font-size: 25px !important;
+  padding-top: 8px;
+}
+
+#device_slider {
+  width: 9999px;
+  margin-left: calc(50% - 305px);
+}
+
+#device_slider_placeholder {
+  position: relative;
+  overflow-x: hidden;
+  height: 280px;
+}
+
+#arrows {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 280px;
+  background: linear-gradient(to right, white, white 10%, transparent 30%, transparent 70%, white 90%, white)
+}
+
+#arrows i {
+  font-size: 50px;
+}
+
+#arrows div {
+  display: inline-block;
+  cursor: pointer;
+}

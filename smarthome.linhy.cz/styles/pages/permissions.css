@@ -1,0 +1,47 @@
+.permissions input[type=checkbox] {
+	/* hide native checkbox */
+	position: absolute;
+	opacity: 0;
+}
+.permissions label, .permissions a {
+	position: relative;
+	display: block;
+	padding: 18px 18px 18px 64px;
+	background: #4d5158;
+	box-shadow: inset 0 -1px #555960;
+	color: #ffffff;
+	font-size: 1.6rem;
+}
+
+.permissions ul {
+	/* by default hide all sub menus */
+	display: none;
+}
+
+.permissions input[type=checkbox]:checked + label + ul,
+.permissions input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+	/* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+	/* show children when item is checked */
+	display: block;
+}
+
+.new-user-form {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.new-user-form i {
+	display: none;
+}
+
+.new-user-table {
+	display: none;
+}
+
+.new-permission td {
+	visibility: hidden;
+}
+
+.new-permission td:last-child {
+	visibility: visible;
+}

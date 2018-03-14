@@ -1,0 +1,58 @@
+{
+  "1": {
+    "html": {
+      "r": "<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><span class='@ID_druhopravneni value'> @value</span></p>",
+      "w": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='text' class='@ID_druhopravneni value'></input><input type='submit' type='text' value='Odeslat'></form>",
+      "rw": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='text' class='@ID_druhopravneni value' placeholder='@value'></input><input type='submit' type='text' value='Odeslat'></form>"
+    },
+    "types": ["string"]
+  },
+  "2": {
+    "html": {
+      "r": {
+        "true": "<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><span>zapnuto</span></p>",
+        "false": "<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><span>vypnuto</span></p>"
+      },
+      "w": {
+        "default": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='submit' class='@ID_druhopravneni value' data_value='false' value='Vypnout'><input type='submit' class='@ID_druhopravneni value' data_value='true' value='Zapnout'></form>"
+      },
+      "rw": {
+        "true": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='submit' class='@ID_druhopravneni value' data_value='false' value='Vypnout'></form>",
+        "false": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='submit' class='@ID_druhopravneni value' data_value='true' value='Zapnout'></form>"
+      }
+    },
+    "types": ["bool"]
+  },
+  "3": {
+    "html": {
+      "r": "<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><span class='@ID_druhopravneni value'> @value</span></p>",
+      "w": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='text' class='@ID_druhopravneni value'></input><input type='submit' type='text' value='Odeslat'></form>",
+      "rw": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='text' class='@ID_druhopravneni value' placeholder='@value'></input><input type='submit' type='text' value='Odeslat'></form>"
+    },
+    "types": ["int", "string"]
+  },
+  "4": {
+    "html": {
+      "r":"<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span class='@ID_druhopravneni value' style='background:color=\"@value\"; width: 100px'></span></p>",
+      "w":"<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input name='colorSelect' type='hidden' id='color_value' value='ffffff' onchange='this.parentElement.getElementsByClassName(\"jscolor\")[0].jscolor.hide(); $(this).parent().unbind(\"submit\").submit()' class='@ID_druhopravneni value'><button class='jscolor {valueElement:color_value, value:\"ffffff\"}' style='width:100px; height:20px;'></button></form>",
+      "rw":"<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input name='colorSelect' type='hidden' id='color_value' value='@value' onchange='this.parentElement.getElementsByClassName(\"jscolor\")[0].jscolor.hide(); $(this).parent().unbind(\"submit\").submit()' class='@ID_druhopravneni value'><button class='jscolor {valueElement:color_value, value:\"@value\"}' style='width:100px; height:20px;'></button></form>"
+    },
+    "types": ["string"]
+  },
+  "5": {
+    "html": {
+      "r": {
+        "true": "<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><span>Otevřeno</span></p>",
+        "false": "<p data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><span>Zavřeno</span></p>"
+      },
+      "w": {
+        "default": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='submit' class='@ID_druhopravneni value' data_value='false' value='Zavřít'><input type='submit' class='@ID_druhopravneni value' data_value='true' value='Otevřít'></form>"
+      },
+      "rw": {
+        "true": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='submit' class='@ID_druhopravneni value' data_value='false' value='Zavřít'></form>",
+        "false": "<form data_druhopravneni='@ID_druhopravneni' data_types='@types' data_opravneni='@ID_opravneni'><span>@Nazev_funkce </span><input type='submit' class='@ID_druhopravneni value' data_value='true' value='Otevřít'></form>"
+      }
+    },
+    "types": ["bool"]
+  }
+}

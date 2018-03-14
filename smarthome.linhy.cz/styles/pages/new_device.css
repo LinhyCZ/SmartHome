@@ -1,0 +1,43 @@
+.body_placeholder * {
+  text-align: center;
+}
+
+.body_placeholder input {
+  width: 500px;
+  display: block;
+  height: 50px;
+  font-size: 45px;
+  line-height: 50px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  box-sizing: content-box;
+}
+
+#new_device_id {
+  margin-right: 10px;
+}
+
+#new_device_info {
+  display: none;
+}
+
+#new_device_form {
+  text-align: center;
+}
+
+#new_device_name {
+  width: 1026px;
+  display: inline-block;
+}
+
+#new_device_form_line_two {
+  /*width: 100%;*/
+  line-height: 54px;
+  vertical-align: top;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

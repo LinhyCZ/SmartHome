@@ -1,0 +1,27 @@
+TODO:
+Funkce - nefunkční UTF-8
+FUNKCE - při uložení se špatně posune pole
+Ovládací panel - po reconenctu automaticky přesunout
+HISTORIE - Android - nevejde se
+CONTROL - BOOL - prázdná hodnota??? WRITE?
+Ovládání - pokud je prádzná hodnota, android aplikace crashne.. Fix? Default value? - JSON default value
+/* WEB DONE */ Web a Android - resetovat při špatném opětovném přihlášení (Restartu serveru - Android zůstane na stejném layoutu - zobrazit přihlašování, WEB smaže URL, ale zachová content)
+/* DONE, COLOR PICKER - POKUD POSUNU SV BAR DO KRAJNÍ POLOHY, BARVA STŘEDU PICKERU SE ZMĚNÍ NA BÍLOU/ČERNOU, ALE NIC SE NESTANE -> POUZE VISUAL GLITCH */ Android - Deaktivovat ovládání když je zařízení offline
+/* DONE, UPRAVENO V KNIHOVNĚ JS COLOR, POZOR PŘI POUŽITÍ MIMO OVLÁDÁNÍ ZAŘÍZENÍ! */ Web - Deaktivovat jscolor když je zařízení offline
+/* DONE */ Web - Ovládání a historie - posun šipkama
+Web - smazání proměných při přepnutí na jinou stránku (funkce onUnload v javascriptu, která po sobě uklidí - odstraní socket listenery, vyčistí proměnné, smaže onclick a další listenery)
+Android - Připnout na hlavní stránku
+Android - widget
+Android - přidat loadery - Menu, kliknutí na stránku, ...
+/* DONE */ Web - odhlášení nesmaže obsah stránky
+Web - vytvořit domovskou strárnku, při odhlášení a ztrátě spojení ji zobrazit
+/* DONE */ Refresh při udělení oprávnění k zařízení
+DB - historie - vypsat pouze prvních 50, při scrollování dolů vypsat další
+
+!Totožné GUI 1 a GUI 3!
+
+
+??Android, WEB - Barva mění barvu textu (pozadí) podle hodnoty
+
+
+Heslo Martinka LED - cV3itmIr53ODk8HoWNB0JDye9LSKy9

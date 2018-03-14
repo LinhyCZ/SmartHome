@@ -1,0 +1,19 @@
+WEB
+	- Font awesome
+	- Jquery
+	- Favicon generator - https://realfavicongenerator.net/
+	- Material design - Roboto font - https://material.io/guidelines/style/typography.html#typography-typeface    https://fonts.google.com/specimen/Roboto
+	- http://api.jquery.com/animate/
+	- barvy: tmavě šedá: #494949; světle šedá: #adadad; zelená :#2bd822; červená: #d81111;
+	- https://github.com/jakiestfu/Blur.js?files=1 - Blur.js knihovna, přihlašovací formulář (Port na Jquery 3 a JqueryUI 1.12.0, nutnost přidat parametr selector (funkce pro získání selectoru byla ve verzi 3.0 odstraněna))
+		- Blur fix - Html2canvas - vyříznout oblast za formulářem, tu rozmazat a vložit jako pozadí, ne screenshot celé stránky
+		https://codyhouse.co/gem/css-multi-level-accordion-menu/
+
+UKLÁDÁNÍ HESEL
+	- Generátor stringu (pepper) - https://www.random.org/strings/
+	- Pepper - https://en.wikipedia.org/wiki/Pepper_(cryptography)
+	- Salt - https://en.wikipedia.org/wiki/Salt_(cryptography)
+	- hash - SHA256
+
+ZABEZPEČENÍ
+	- Certifikát - Let's Encrypt - bot (https://github.com/Lone-Coder/letsencrypt-win-simple)

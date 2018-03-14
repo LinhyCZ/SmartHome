@@ -1,0 +1,30 @@
+.device {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+
+.device img {
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 150px;
+  display: block;
+}
+
+.symbol {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
+.symbol i {
+  color: white;
+  font-size: 25px !important;
+  padding-top: 8px;
+}

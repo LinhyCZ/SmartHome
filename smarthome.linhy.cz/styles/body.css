@@ -1,0 +1,39 @@
+.body_placeholder {
+  min-height: calc(100% - 50px);
+  min-width: 700px;
+  width: calc(100% - 650px);
+  position: absolute;
+  top: 50px;
+  left: calc(50% - calc(100% - 650px) / 2);
+  background: white;
+  padding: 10px;
+}
+
+body {
+  background-image: url("/pencils.jpeg");
+}
+
+#loader::before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 100;
+}
+
+#loader i {
+  display: inline-block;
+  font-size: 100px !important;
+}
