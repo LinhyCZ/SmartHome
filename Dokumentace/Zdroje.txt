@@ -1,0 +1,5 @@
+https://atom.io/ - Atom
+https://platformio.org/platformio-ide - Platformio
+https://www.microsoft.com/cs-cz/sql-server/sql-server-2017-editions - Microsoft SQL
+https://cs.wikipedia.org/wiki/Node.js - node.js
+https://cs.wikipedia.org/wiki/Android_(operační_systém) - Android
