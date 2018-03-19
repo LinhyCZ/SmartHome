@@ -9,11 +9,6 @@
         android:id="@+id/functionValueWrapper"
         android:orientation="vertical"></LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/deviceName"/>
-
     <Button
         android:id="@+id/pinToHomescreen"
         android:clickable="true"

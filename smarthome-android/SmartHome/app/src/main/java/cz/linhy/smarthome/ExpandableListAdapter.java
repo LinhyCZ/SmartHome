@@ -1,9 +1,11 @@
 package cz.linhy.smarthome;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,19 +15,23 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter{
-    private Context _context;
+    private MainMenu _context;
     private List<Boolean> _Status;
     private List<String> _listDataHeader; // header titles
     private List<String> _IDs;
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
 
-    public ExpandableListAdapter(Context context, List<String> listDataHeader, List<String> IDs, List<Boolean> status,
+    public ExpandableListAdapter(MainMenu context, List<String> listDataHeader, List<String> IDs, List<Boolean> status,
                               HashMap<String, List<String>> listChildData) {
         this._context = context;
+        listDataHeader.add(0, "Hlavní strana");
         this._listDataHeader = listDataHeader;
+        IDs.add(0, "0");
         this._IDs = IDs;
+        status.add(false);
         this._Status = status;
+        listChildData.put("Hlavní strana", new ArrayList<String>());
         this._listDataChild = listChildData;
     }
 
@@ -98,10 +104,20 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter{
 
         convertView.findViewById(R.id.ListGroupLayout).setTag(getDeviceId(groupPosition));
         TextView lblDeviceStatus = (TextView) convertView.findViewById(R.id.labelDeviceStatus);
-        if(getDeviceStatus(groupPosition)) {
-            lblDeviceStatus.setBackground(_context.getDrawable(R.drawable.online_icon));
+        if (!getDeviceId(groupPosition).equals("0")) {
+            if(getDeviceStatus(groupPosition)) {
+                lblDeviceStatus.setBackground(_context.getDrawable(R.drawable.online_icon));
+            } else {
+                lblDeviceStatus.setBackground(_context.getDrawable(R.drawable.offline_icon));
+            }
         } else {
-            lblDeviceStatus.setBackground(_context.getDrawable(R.drawable.offline_icon));
+            convertView.findViewById(R.id.ListGroupLayout).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainMenu.onMenuListClick(v, _context);
+                }
+            });
+            lblDeviceStatus.setBackgroundColor(Color.BLACK);
         }
 
         TextView lblListHeader = (TextView) convertView

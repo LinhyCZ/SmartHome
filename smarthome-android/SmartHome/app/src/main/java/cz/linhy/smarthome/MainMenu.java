@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -42,23 +43,29 @@ import java.util.List;
 
 
 public class MainMenu extends AppCompatActivity {
+    private static final int LAYOUT_DEFAULT = 0;
+    private static final int LAYOUT_HISTORY = 1;
+    private static final int LAYOUT_CONTROLS = 2;
+
+
     private BroadcastReceiver receiver;
     private boolean menuOpen = false;
     private static String openedDeviceID;
-    private int currentLayout = LAYOUT_DEFAULT;
+    private static int currentLayout = LAYOUT_DEFAULT;
     public static int newMargin;
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
-    LinearLayout dataLayout;
+    private static LinearLayout dataLayout;
     private static JSONObject deviceData;
     private static JSONObject historyData;
     private static JSONObject pinnedHomeScreenData;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
     List<String> deviceIDs = new ArrayList<>();
-    HashMap<String, String> deviceNames = new HashMap<>();
 
+    HashMap<String, String> deviceNames = new HashMap<>();
     private static HashMap<String, String> historyActions = new HashMap<>();
+
     static {
         historyActions.put("1", "Příkaz");
         historyActions.put("2", "Status");
@@ -66,10 +73,6 @@ public class MainMenu extends AppCompatActivity {
         historyActions.put("4", "Vypnuto");
         historyActions.put("5", "Registrace");
     }
-
-    private static final int LAYOUT_DEFAULT = 0;
-    private static final int LAYOUT_HISTORY = 1;
-    private static final int LAYOUT_CONTROLS = 2;
 
     void doStartService() {startService(new Intent(MainMenu.this, SmartHomeService.class));};
 
@@ -87,6 +90,17 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onMenuClick(v);
+            }
+        });
+
         preferences = getSharedPreferences("data", Context.MODE_PRIVATE);
         editor = preferences.edit();
 
@@ -176,7 +190,7 @@ public class MainMenu extends AppCompatActivity {
                                         }
                                     }
 
-                                    View newView = ValueBuilder.buildView(buildData, jsonData.getString("ID_druhopravneni"), MainMenu.this, jsonData.getString("ID_zarizeni"), isPinned, null);
+                                    View newView = ValueBuilder.buildView(buildData, jsonData.getString("ID_druhopravneni"), MainMenu.this, jsonData.getString("ID_zarizeni"), isPinned);
                                     parent.addView(newView, index);
 
 
@@ -247,6 +261,21 @@ public class MainMenu extends AppCompatActivity {
         super.onDestroy();
     }
 
+    public static void onMenuListClick(View v, MainMenu context) {
+        String tag = (String) v.getTag();
+        if (tag != null) {
+            if (tag.equals("0")) {
+                dataLayout.removeAllViewsInLayout();
+                View controlView = LayoutInflater.from(context).inflate(R.layout.main_menu_default, null);
+                dataLayout.addView(controlView);
+
+                currentLayout = LAYOUT_DEFAULT;
+                context.renderPinnedItems();
+                context.toggleMenu();
+            }
+        }
+    }
+
     private void renderPinnedItems() {
         Log.d("SmartHomeLogRender", "Trying to render items");
         try {
@@ -259,6 +288,7 @@ public class MainMenu extends AppCompatActivity {
                     ViewGroup controlElements = (ViewGroup) findViewById(R.id.controlElements);
                     controlElements.removeAllViews();
                     while (deviceIDs.hasNext()) {
+                        boolean addedName = false;
                         String deviceID = (String) deviceIDs.next();
                         Log.d("SmartHomeLogRender", "Rendering for deviceID: " + deviceID);
                         if (deviceData.has(deviceID)) {
@@ -273,7 +303,11 @@ public class MainMenu extends AppCompatActivity {
                                         JSONObject currentFunction = currentDeviceData.getJSONObject(functionID);
 
                                         Log.d("SmartHomeLogRender", "Building value");
-                                        controlElements.addView(ValueBuilder.buildView(currentFunction, functionID, MainMenu.this, deviceID, true, currentDeviceData.getString("Prezdivka_zarizeni")));
+                                        if(!addedName) {
+                                            controlElements.addView(ValueBuilder.buildDeviceNameLabel(MainMenu.this, currentDeviceData.getString("Prezdivka_zarizeni")));
+                                            addedName = true;
+                                        }
+                                        controlElements.addView(ValueBuilder.buildView(currentFunction, functionID, MainMenu.this, deviceID, true));
 
                                         List<View> children = getAllChildren(controlElements);
                                         for (int i = 0; i < children.size(); i++) {
@@ -511,7 +545,7 @@ public class MainMenu extends AppCompatActivity {
                         }
                     }
 
-                    controlElements.addView(ValueBuilder.buildView(currentFunction, key, this, device_id, isPinned, null));
+                    controlElements.addView(ValueBuilder.buildView(currentFunction, key, this, device_id, isPinned));
 
                     List<View> children = getAllChildren(findViewById(R.id.controlElements));
                     for (int i = 0; i < children.size(); i++) {

@@ -29,7 +29,14 @@ import org.json.JSONObject;
 public class ValueBuilder {
     private static MainMenu _context;
 
-    public static View buildView(JSONObject data, String functionID, MainMenu context, String deviceID, boolean isPinned, String deviceName) {
+    public static View buildDeviceNameLabel(MainMenu context, String data) {
+        LinearLayout nameLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.device_name_label, null);
+        TextView nameText = (TextView) nameLayout.findViewById(R.id.deviceName);
+        nameText.setText(data);
+        return nameLayout;
+    }
+
+    public static View buildView(JSONObject data, String functionID, MainMenu context, String deviceID, boolean isPinned) {
         _context = context;
         try {
             int viewID = 0;
@@ -160,10 +167,6 @@ public class ValueBuilder {
                 pinButton.setBackground(context.getDrawable(R.drawable.pin_blue));
             }
 
-            if (deviceName != null) {
-                TextView deviceNameText = (TextView) functionWrapper.findViewById(R.id.deviceName);
-                deviceNameText.setText(deviceName);
-            }
             wrapperLayout.addView(function);
             return functionWrapper;
         } catch (JSONException e) {
