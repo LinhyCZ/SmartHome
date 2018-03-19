@@ -10,7 +10,8 @@ Ovládání - pokud je prádzná hodnota, android aplikace crashne.. Fix? Defaul
 /* DONE, UPRAVENO V KNIHOVNĚ JS COLOR, POZOR PŘI POUŽITÍ MIMO OVLÁDÁNÍ ZAŘÍZENÍ! */ Web - Deaktivovat jscolor když je zařízení offline
 /* DONE */ Web - Ovládání a historie - posun šipkama
 Web - smazání proměných při přepnutí na jinou stránku (funkce onUnload v javascriptu, která po sobě uklidí - odstraní socket listenery, vyčistí proměnné, smaže onclick a další listenery)
-Android - Připnout na hlavní stránku
+/* DONE */ Android - Připnout na hlavní stránku
+Android - připnutí na hlavní stranu - při odepnutí smazat, zobrazit jméno zařízení
 Android - widget
 Android - přidat loadery - Menu, kliknutí na stránku, ...
 /* DONE */ Web - odhlášení nesmaže obsah stránky

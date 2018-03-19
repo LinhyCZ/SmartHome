@@ -16,7 +16,7 @@ class SmartHome
     void sendString(String functionID, String data);
     void sendBool(String functionID, bool data);
     void onReceive (String functionID, std::function<void (JsonObject& data)>);
-    void onReceivedConfiguration (std::function<void (JsonObject& data)>);
+    void onReceivedConfiguration(std::function<void (JsonObject& data)>);
     void loop();
   private:
     ESP8266WiFiMulti _wifiMulti;
@@ -33,7 +33,7 @@ class SmartHome
     void eraseEEPROM(size_t start, size_t length);
     void _statusReceived(const char * payload, size_t length);
     String getPassword();
-    void onReceivedConfiguration(std::function<void (JsonObject& data)> function);
+    void retrieveConfiguration(const char * payload, size_t length);
     std::function<void (JsonObject& data)> _receivedConfigurationListener;
     std::map<String, std::function<void (JsonObject& data)>> _functionListeners;
 };

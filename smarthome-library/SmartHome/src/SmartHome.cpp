@@ -133,7 +133,7 @@ void SmartHome::retrieveConfiguration(const char * payload, size_t length) {
     if (!data.success()) {
       return;
     }
-    _receivedConfigurationListener->second(data);
+    _receivedConfigurationListener(data);
   }
 }
 
