@@ -342,6 +342,7 @@ function redrawFunction(selector) {
 
 function parseFunctions(selector) {
   var first = true;
+  $(selector).html("");
   for (var i in functions) {
     if (i != 1) {
       if (first) {

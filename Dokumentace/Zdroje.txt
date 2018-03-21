@@ -3,3 +3,9 @@ https://platformio.org/platformio-ide - Platformio
 https://www.microsoft.com/cs-cz/sql-server/sql-server-2017-editions - Microsoft SQL
 https://cs.wikipedia.org/wiki/Node.js - node.js
 https://cs.wikipedia.org/wiki/Android_(operační_systém) - Android
+https://cs.wikipedia.org/wiki/HyperText_Markup_Language - HTML
+https://cs.wikipedia.org/wiki/JavaScript - Javascript
+http://plugins.jquery.com/tag/jquery/ - jQuery pluginy
+https://cs.wikipedia.org/wiki/JQuery - jQuery
+https://en.wikipedia.org/wiki/ESP8266 - ESP8266 (NodeMCU)
+https://cs.wikipedia.org/wiki/Let's_Encrypt - Let's Encrypt

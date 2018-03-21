@@ -3,7 +3,7 @@
   "uploadOnSave": true,
   "useAtomicWrites": false,
   "deleteLocal": false,
-  "hostname": "92.62.239.3",
+  "hostname": "109.164.112.21",
   "port": "21",
   "target": "/www/smarthome",
   "ignore": [
