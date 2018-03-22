@@ -124,27 +124,6 @@ io.on("connection", function(socket) {
     }
 	})
 
-  socket.on("test", function() {
-    fn.l("TESSTTETASASDAHSDJASDHLKJAHSLDALSDKJASHDLADSJKDSHALKLKJDAS");
-  })
-
-
-	socket.on("command", function(data) {
-		if (auth.isAuth(socket)) {
-			/*socket.to("Gate").emit("command", data);*/
-		}
-	})
-
-	socket.on("status", function(data) {
-		if (auth.isAut(socket)) {
-			fn.l("Received data: " + data.msg);
-			/*socket.to("Administrator").emit(data);
-			socket.to("User").emit(data);*/
-		} else {
-			fn.l("Somebody tried to upload data without authentication!");
-		}
-	})
-
 	socket.on('disconnect', function() {
     var id = dev.unAuth(socket);
 		if (id) {
@@ -257,12 +236,6 @@ io.on("connection", function(socket) {
       getConfiguration(socket);
     }
   })
-
-  /*socket.on('developer_login', function(data) { /* TODO SMAZAT */
-  /*  if (data == "IAMAMOTHERFUCKINGBOSS") {
-      getLogin("LinhyCZ", "Tomas1999", socket);
-    }
-  })*/
 
   socket.on('commandToServer', function(data) {
     if(auth.isAuth(socket)) {
@@ -631,7 +604,6 @@ function addNewFunction(socket, data) {
 
   var parameters = {
     "nazev": [TYPES.VarChar, json["function_name"]],
-    "parametry": [TYPES.VarChar, JSON.stringify(json["parametry"])],
     "read": [TYPES.Bit, (json["rw"] == 2 || json["rw"] == 0 ? 1 : 0)],
     "write": [TYPES.Bit, (json["rw"] == 2 || json["rw"] == 1 ? 1 : 0)],
     "autor": [TYPES.VarChar, auth.getUserId(socket)],

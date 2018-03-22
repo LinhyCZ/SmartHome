@@ -19,6 +19,9 @@ Web - vytvořit domovskou strárnku, při odhlášení a ztrátě spojení ji zo
 /* DONE */ Refresh při udělení oprávnění k zařízení
 DB - historie - vypsat pouze prvních 50, při scrollování dolů vypsat další
 
+
+SERVER - GetFunctions vrací i info o GUI.. potřeba?
+
 !Totožné GUI 1 a GUI 3!
 
 
