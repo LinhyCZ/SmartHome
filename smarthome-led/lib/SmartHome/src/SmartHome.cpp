@@ -139,6 +139,7 @@ void SmartHome::retrieveConfiguration(const char * payload, size_t length) {
 
 void SmartHome::begin()
 {
+  EEPROM.begin(4096);
   Serial.println("Starting smarthome library");
   _wifiMulti.addAP(_defaultSSID, _defaultPassword);
   Serial.print("Added default AP: "); Serial.print(_defaultSSID); Serial.print(":"); Serial.println(_defaultPassword);
